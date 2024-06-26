@@ -3,21 +3,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 /* Body styling */
 body {
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background: #f4f4f4;
+    background-color: #f4f4f4;
 }
 
 /* Navigation styling */
 nav {
-    background: #333;
+    background-color: #333;
     color: #fff;
-    padding: 10px 0;
     text-align: center;
+    padding: 10px 0;
 }
 
 nav ul {
@@ -33,38 +33,72 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f93;
 }
 
 /* Hero section */
 .hero {
-    position: relative;
     background: linear-gradient(135deg, #f06, #f93);
     color: #fff;
     text-align: center;
-    padding: 50px 0;
-    animation: fadeIn 2s ease-in-out;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
 }
 
 /* Sections */
 section {
-    padding: 20px;
+    padding: 40px 20px;
     margin: 20px 0;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Project cards */
+section h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+section p {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* Projects section */
+.project-cards-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 .project-card {
     position: relative;
     perspective: 1000px; /* Perspective for 3D effect */
-    margin-bottom: 20px;
-    cursor: pointer;
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card-inner {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 100%;
     transition: transform 0.8s;
     transform-style: preserve-3d;
 }
@@ -78,27 +112,26 @@ section {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-}
-
-.card-front {
-    background: #f9f9f9;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+.card-front {
+    background-color: #f9f9f9;
 }
 
 .card-front img {
     max-width: 100%;
-    height: auto;
+    max-height: 100%;
     border-radius: 5px;
 }
 
 .card-back {
     transform: rotateY(180deg);
-    background: #f9f9f9;
+    background-color: #f9f9f9;
     padding: 20px;
-    border: 1px solid #ddd;
 }
 
 .card-back h3 {
@@ -110,21 +143,15 @@ section {
     margin-bottom: 10px;
 }
 
-/* Footer */
+/* Contact section */
+#contact {
+    text-align: center;
+}
+
 footer {
-    background: #333;
+    background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
